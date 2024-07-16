@@ -1,3 +1,4 @@
 node_modules/
 reports/
 *.postman_collection.json
+.env
