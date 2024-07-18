@@ -21,4 +21,4 @@ class RequestManager {
 }
 
 
-module.exports = new RequestManager(process.env.WRIKE_BASE_URL);
+module.exports = new RequestManager(process.env.BASE_URL);
