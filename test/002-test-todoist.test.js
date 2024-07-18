@@ -2,6 +2,13 @@ const request = require("./../utils/requestManager");
 require('dotenv').config();
 
 describe("Autenticação do TODOIST", () => {
+    test("Verificar authenticação", async() =>{
+        //code
+        //body
+        //header
+
+    })
+
     test("Verificar que é possível atenticar usuário", async() => {
 
         let response = await request.send(
