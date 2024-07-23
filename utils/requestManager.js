@@ -3,7 +3,11 @@ require('dotenv').config();
 
 class RequestManager {
     constructor(baseURL, headers={}, timeout=5000) {
-        if (!this.instance) this.getInstance();
+        if (RequestManager._instance) { 
+            return RequestManager._instance 
+        };
+        RequestManager._instance = this;
+
         this.axios = axios.create({
             baseURL,
             headers,
@@ -19,11 +23,7 @@ class RequestManager {
             headers: headers
         })
     }
-
-    static getInstance(){
-        return this;
-    }
 }
 
-const requestManager = new RequestManager(process.env.BASE_URL).getInstance();
+const requestManager = new RequestManager(process.env.BASE_URL);
 module.exports = requestManager;
