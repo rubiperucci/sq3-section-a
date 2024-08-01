@@ -1,8 +1,9 @@
-const axios = require('axios');
-require('dotenv').config();
+const axios = require("axios");
+const { environment, configuration } = require("#utils/environment.js");
+const logger = require("#utils/logger.js");
 
 class RequestManager {
-    constructor(baseURL, headers={}, timeout=5000) {
+    constructor(baseURL, headers={}, timeout=configuration.timeout) {
         if (RequestManager._instance) { 
             return RequestManager._instance 
         };
@@ -16,14 +17,23 @@ class RequestManager {
     }
 
     async send(method, endpoint, params, headers){
-        return this.axios.request({
+        logger.info(`Send ${method.toUpperCase()} request to ${this.axios.defaults.baseURL + endpoint}`);
+        if (params) logger.debug(`Request params: ${JSON.stringify(params)}`);
+        if (headers) logger.debug(`Request headers: ${JSON.stringify(headers)}`);
+
+        const response = await this.axios.request({
             method: method,
             url: endpoint,
             params: params,
             headers: headers
-        })
+        });
+        logger.debug(`Request response data: ${JSON.stringify(response.data)}`);
+
+        return response
     }
 }
 
-const requestManager = new RequestManager(process.env.BASE_URL);
-module.exports = requestManager;
+module.exports = new RequestManager(
+    environment.base_url,
+    { "Content-Type": "application/json" }
+);

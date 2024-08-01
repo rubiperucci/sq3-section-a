@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "required": [
+        "cep",
+        "logradouro",
+        "bairro",
+        "localidade",
+        "uf",
+        "ibge",
+        "ddd"
+    ],
+    "properties": {
+        "cep": {
+            "type": "string"
+        },
+        "logradouro": {
+            "type": "string"
+        },
+        "complemento": {
+            "type": "string"
+        },
+        "unidade": {
+            "type": "string"
+        },
+        "bairro": {
+            "type": "string"
+        },
+        "localidade": {
+            "type": "string"
+        },
+        "uf": {
+            "type": "string"
+        },
+        "ibge": {
+            "type": "string"
+        },
+        "gia": {
+            "type": "string"
+        },
+        "ddd": {
+            "type": "string"
+        },
+        "siafi": {
+            "type": "string"
+        }
+    }
+}
