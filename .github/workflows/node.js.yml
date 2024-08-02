@@ -15,5 +15,5 @@ jobs:
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
-          name: test-report-via-cep.html
-          path: output/test/test-report-via-cep.html
+          name: test-report-via-cep
+          path: reports/test-report-via-cep.html

@@ -1,4 +1,4 @@
 node_modules/
-reports/
+reports/*.log
 *.postman_collection.json
 .env
