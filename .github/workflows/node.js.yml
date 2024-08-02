@@ -16,4 +16,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-report-via-cep.html
-          path: reports/test-report-via-cep.html
+          path: output/test/test-report-via-cep.html
