@@ -25,6 +25,13 @@ jobs:
         with:
           name: test-report-via-cep
           path: reports/test-report-via-cep.html
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-without-markdown
+          path: |
+            dist
+            !dist/**/*.md
     outputs:
       artifact-id: ${{ github.run_id }}
       artifact-url: https://github.com/rubiperucci/sq3-section-a/actions/runs/${{ github.run_attempt }}/artifacts/${{ github.run_id }}
