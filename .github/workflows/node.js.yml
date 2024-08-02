@@ -25,6 +25,3 @@ jobs:
         with:
           name: test-report-via-cep
           path: dist/test-report-via-cep.html
-    outputs:
-      artifact-id: ${{ github.run_id }}
-      artifact-url: https://github.com/rubiperucci/sq3-section-a/actions/runs/${{ github.run_attempt }}/artifacts/${{ github.run_id }}
