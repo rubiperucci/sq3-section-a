@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-report-via-cep
-          path: dist/test-report-via-cep.html
+          path: reports/test-report-via-cep.html
