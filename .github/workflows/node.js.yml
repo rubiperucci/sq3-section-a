@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-report-via-cep
-          path: https://github.com/rubiperucci/sq3-section-a/runs/${{ github.run-attempt }}/test-report-via-cep.html
+          path: https://github.com/rubiperucci/sq3-section-a/runs/${{ github.run_attempt }}/test-report-via-cep.html
