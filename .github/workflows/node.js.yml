@@ -25,3 +25,6 @@ jobs:
         with:
           name: test-report-via-cep
           path: reports/test-report-via-cep.html
+          artifact-id: via-cep
+          artifact-url: https://github.com/rubiperucci/sq3-section-a/runs/${{ GITHUB_RUN_ATTEMPT }}/artifacts/via-cep
+          
