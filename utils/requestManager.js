@@ -21,15 +21,21 @@ class RequestManager {
         if (params) logger.debug(`Request params: ${JSON.stringify(params)}`);
         if (headers) logger.debug(`Request headers: ${JSON.stringify(headers)}`);
 
-        const response = await this.axios.request({
-            method: method,
-            url: endpoint,
-            params: params,
-            headers: headers
-        });
-        logger.debug(`Request response data: ${JSON.stringify(response.data)}`);
+        try {
+            const response = await this.axios.request({
+                method: method,
+                url: endpoint,
+                params: params,
+                headers: headers
+            });
+            logger.debug(`Request response data: ${JSON.stringify(response.data)}`);
+            return response
 
-        return response
+        } catch (error) {
+            logger.error(`Request failed with status code: ${error.response?.status}`);
+            logger.error(`Response data: ${JSON.stringify(error.response?.data)}`);
+            // not throwing error
+        }
     }
 }
 

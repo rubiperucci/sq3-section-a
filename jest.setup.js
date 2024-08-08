@@ -1,8 +1,8 @@
-const { configuration, environment } = require("#/utils/environment");
-const logger = require("#/utils/logger");
-const { matchersWithOptions } = require("jest-json-schema");
+const { configuration, environment } = require("#utils/environment.js");
+const logger = require("#utils/logger.js");
+const softAssert = require('#utils/softAssert.js');
 
-expect.extend(matchersWithOptions());
+global.softAssert = softAssert;
 
 beforeAll(async() => {
     logger.info("Started tests")
